@@ -1,0 +1,22 @@
+version: '2.1'
+
+services:
+  php-apache:
+    container_name: image-transformer-php-apache
+    build: docker/php-apache
+    ports:
+      - 8080:80
+    volumes:
+      - ./public:/var/www/html
+      - .:/var/www
+      - ./var/logs:/var/log
+
+  composer:
+    container_name: image-transformer-composer
+    image: composer:latest
+    depends_on:
+      - php-apache
+    command: install
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
