@@ -1,3 +1,4 @@
 <?php
+/** @var \Laravel\Lumen\Routing\Router $router */
 
-$router->post('/transform-image', 'ImageController@transform');
+$router->post('/image/transform', 'ImageController@transformAction');

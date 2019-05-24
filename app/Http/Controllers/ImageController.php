@@ -28,7 +28,7 @@ final class ImageController extends Controller
         $this->circleFilter = $circleFilter;
     }
 
-    public function transform(Request $request): Response
+    public function transformAction(Request $request): Response
     {
         $requestContentType = $request->header('Content-Type');
 
