@@ -18,7 +18,7 @@ class Handler extends ExceptionHandler
         ValidationException::class,
     ];
 
-    public function render($request, Exception $exception)
+    public function render($request, Exception $exception): JsonResponse
     {
         $flattenedException = FlattenException::create($exception);
 
